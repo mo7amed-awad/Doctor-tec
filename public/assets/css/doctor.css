@@ -1,0 +1,263 @@
+/********** Main CSS **********/
+:root {
+    --primary: #06A3DA;
+    --secondary: #F57E57;
+    --secondary-alt: #eb5928;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+    --transition: 0.5s;
+    --box-shodow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:not(i) {
+    font-family: 'Rubik', sans-serif !important;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+}
+
+button {
+    font-family: 'Rubik', sans-serif !important;
+}
+
+.button {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--dark);
+    border: 0.1rem solid var(--primary);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    background-image: linear-gradient(to right, var(--primary), var(--light));
+    transition: var(--transition);
+}
+
+.button:hover {
+    background-image: linear-gradient(to right, var(--light), var(--primary));
+    color: #fff;
+    letter-spacing: 0.1rem;
+}
+
+.bg-sec {
+    background-color: #e9e9e9;
+}
+
+/* Back To To  */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+    transition: var(--transition);
+    color: white;
+}
+
+
+
+/* Start sittings-box */
+
+.sittings-box {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    background-color: white;
+    z-index: 10000;
+    width: 220px;
+    min-height: 100vh;
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.sittings-box.open {
+    left: 0;
+}
+
+.sittings-box .toggle-settings {
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px var(--primary);
+}
+.sittings-box .toggle-settings .navication{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    top: 5%;
+    right: 2%;
+    transition: var(--transition);
+}
+.hide{
+    opacity: 0;
+}
+.sittings-box .ters {
+    font-size: 20px;
+    padding: 8px 0;
+    width: 30px;
+    color: var(--primary);
+}
+
+.sittings-box .sittings-container .option-box {
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.sittings-box .sittings-container .option-box h4 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 14px;
+}
+.sittings-box .sittings-container .option-box > div{
+    background-color: white;
+    padding: 5px 4px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+.sittings-box .sittings-container .option-box .name{
+    color: var(--dark);
+    font-size: 18px;
+}
+.sittings-box .sittings-container .option-box .btn{
+    background-color: var(--primary);
+    margin: 0 !important;
+    padding: 5px;
+    color: white;
+}
+
+
+.sittings-box .sittings-container .option-box div.active {
+    opacity: 1;
+}
+
+
+/* End sittings-box */
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.img-doc {
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin-top: -55px;
+}
+
+.info {
+    flex-basis: 1;
+    width: 100%;
+    margin: 0 20px;
+    padding: 10px;
+}
+
+.info .name {
+    color: #06A3DA;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+@media(max-width:767px) {
+    .box {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .img-doc {
+        margin-top: -25px;
+    }
+
+    .info .name {
+        font-size: 14px;
+
+    }
+
+
+}
+
+
+ .popup {
+     width: 250px;
+     background-color: #fff;
+     border-radius: 6px;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translate(-50%, -50%) scale(0.1);
+     z-index: 10000;
+     text-align: center;
+     padding: 0 30px 30px;
+     color: #333;
+     border: 2px solid #ddd;
+     visibility: hidden;
+     transition: transform 0.4s, top 0.4s;
+ }
+
+ .opon-popup {
+     visibility: visible;
+     top: 20%;
+     transform: translate(-50%, -50%) scale(1);
+ }
+
+ .popup img {
+     width: 100px;
+     height: 100px;
+     margin-top: -50px;
+     border-radius: 50%;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+
+ .popup h2 {
+     font-size: 22px;
+     font-weight: 400;
+     margin: 20px 0 0 0;
+ }
+
+ .popup button {
+     width: 100%;
+     margin-top: 50px;
+     padding: 10px 0;
+     background-color: #ec1d25;
+     color: #fff;
+     border: 0;
+     outline: none;
+     font-size: 18px;
+     border-radius: 4px;
+     cursor: pointer;
+     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+ }
